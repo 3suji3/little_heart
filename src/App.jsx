@@ -3,7 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import Main from './components/Main';
-import Today from './pages/Today';
+import Today from './pages/TodayPage';
+import WritePage from './pages/WritePage';
+import WriteDiary from './components/Write/WriteDiary';
+import EmotionPage from './pages/EmotionPage';
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
             <Route path='signup' element={<SignupPage/>} />
         </Route>
         <Route path='today' element={<Today />} />
+        <Route path='write' element={<WritePage />} />
+        <Route path='write/diary' element={<WriteDiary />} />
+        <Route path='write/diary/emotion' element={<EmotionPage />} />
       </Routes>
     </div>
   );

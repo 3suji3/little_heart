@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid, TextField, Button, createTheme, ThemeProvider } from '@mui/material';
+import Server from '../utils/API';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import './css/LoginPage.css';
 
 // 커스텀 테마 생성
@@ -13,12 +15,49 @@ const theme = createTheme({
 });
 
 const LoginPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleLoginPage = () => {
-    navigate('/today');
-  }
+  const [formLoginData, setFormLoginData] = useState({
+    id: '',
+    password: '',
+  });
 
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormLoginData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleLogin = async () => {
+    const { id, password } = formLoginData;
+  
+    if (!id || !password) {
+      alert('모든 필드를 채워주세요.');
+      return;
+    }
+  
+    try {
+      // JSON Server에서 모든 사용자 데이터를 가져옴
+      const response = await Server.get('/users');
+      const users = response.data;
+  
+      // 사용자 검증
+      const user = users.find((user) => user.id === id && user.password === password);
+  
+      if (user) {
+        alert(`${user.username}님 환영합니다.`);
+        localStorage.setItem('username', user.username);
+        navigate('/today', { state: { username: user.username } });
+      } else {
+        alert('아이디 또는 비밀번호가 잘못되었습니다.');
+      }
+    } catch (error) {
+      console.error('로그인 오류:', error.message);
+      alert('로그인 요청 중 문제가 발생했습니다.');
+    }
+  };
   return (
     <ThemeProvider theme={theme}>
       <Grid container style={{ height: '100vh' }}>
@@ -48,14 +87,20 @@ const LoginPage = () => {
           />
           <TextField
             label="아이디"
+            id="id"
             variant="outlined"
+            value={formLoginData.id} 
+            onChange={handleInputChange}
             fullWidth
             style={{ marginBottom: '20px', width: '25rem' }}
             color="primary" 
           />
           <TextField
             label="비밀번호"
+            id="password"
             type="password"
+            value={formLoginData.password} 
+            onChange={handleInputChange}
             variant="outlined"
             style={{ marginBottom: '24px', width: '25rem' }}
             color="primary"
@@ -79,8 +124,8 @@ const LoginPage = () => {
               e.target.style.backgroundColor = '#BEEDCD';
               e.target.style.color = '#7EDC9C';
             }}
-            onClick={handleLoginPage}
-            >
+            onClick={handleLogin}
+          >
             로그인
           </Button>
         </Grid>

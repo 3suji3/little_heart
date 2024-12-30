@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "username": "김인간",
+      "id": "kig0423",
+      "password": "12345678"
+    },
+    {
+      "id": "back321",
+      "username": "김백수",
+      "password": "1234"
+    },
+    {
+      "id": "bac1118",
+      "username": "박민서",
+      "password": "1234"
+    }
+  ],
+
+  "diary": [
+    {
+      "date": "2024.12.22",
+      "title": "꾸에에렉"
+    }
+  ]
+}
