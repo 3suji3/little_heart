@@ -8,11 +8,17 @@ const Header = () => {
   // 활성화된 버튼 ID를 저장하는 상태
   const [activeButton, setActiveButton] = useState('');
 
+  const handleLogout = () => {
+    localStorage.removeItem('username'); 
+    
+    navigate('/'); 
+
+    alert('로그아웃되었습니다.');
+  };
+
   const handleButtonClick = (buttonId, path) => {
-    // 클릭된 버튼을 활성화 상태로 설정
     setActiveButton(buttonId);
 
-    // 페이지 이동
     navigate(path);
   };
 
@@ -114,6 +120,7 @@ const Header = () => {
             e.target.style.backgroundColor = '#BEEDCD';
             e.target.style.color = '#7EDC9C';
           }}
+          onClick={handleLogout}
         >
           로그아웃
         </Button>
