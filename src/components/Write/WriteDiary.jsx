@@ -1,30 +1,32 @@
 import { Box, Grid, Typography, TextField, Button, createTheme, ThemeProvider } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../Header";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#7EDC9C', 
+      main: '#7EDC9C',
     },
   },
 });
 
 const WriteDiary = () => {
-  const getNowDate = () => {
-    const now = new Date();
-    return now.toLocaleDateString("ko-KR", {
+  const location = useLocation();
+  const selectedDate = location.state?.selectedDate || new Date();
+
+  const getFormattedDate = (date) => {
+    return date.toLocaleDateString("ko-KR", {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
     });
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleEmotionPage = () => {
-    navigate('/write/diary/emotion')
-  }
+    navigate("/write/diary/emotion");
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -57,8 +59,8 @@ const WriteDiary = () => {
         >
           <Box
             display="flex"
-            justifyContent="space-between" 
-            alignItems="center" 
+            justifyContent="space-between"
+            alignItems="center"
             style={{
               width: "100%",
               marginBottom: "20px",
@@ -69,14 +71,13 @@ const WriteDiary = () => {
               style={{
                 color: "#5FB079",
                 fontWeight: "bold",
-                textAlign: "center", 
-                flex: "1", // 공간 균등 분배
+                textAlign: "center",
+                flex: "1",
               }}
             >
-              {getNowDate()}
+              {getFormattedDate(new Date(selectedDate))}
             </Typography>
           </Box>
-
           <Box
             borderTop={"3px solid #5FB079"}
             width="100%"

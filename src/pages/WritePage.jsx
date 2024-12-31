@@ -1,127 +1,164 @@
-import { Box, Button, Grid, Typography } from "@mui/material"
-import Header from "../components/Header"
-import { useNavigate } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { Button, Grid } from "@mui/material";
+import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import moment from "moment";
 import { useState } from "react";
+import styled from "styled-components";
+
+const StyledCalendar = styled(Calendar)`
+  width: 100%;
+  max-width: 1200px;
+  height: 550px;
+  max-height: 550px;
+  border: 3px solid #5FB079;
+
+  .react-calendar__navigation {
+    background-color: #fff;
+    color: #000; 
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: none; 
+  }
+
+  .react-calendar__navigation__label {
+    background-color: #fff !important;
+    color: #000; 
+    font-size: 1.8rem;
+  }
+
+  .react-calendar__month-view__weekdays abbr {
+    text-decoration: none;
+    font-weight: 800;
+  }
+
+  .react-calendar__month-view__weekdays__weekday--weekend abbr[title="토요일"] {
+    color: ${(props) => props.theme.blue_1};
+  }
+
+  .react-calendar__month-view__weekdays__weekday--weekend abbr[title="일요일"] {
+    color: ${(props) => props.theme.red_1};
+  }
+
+  .react-calendar__tile {
+    &--weekend {
+      color: ${(props) => props.theme.gray_5};
+    }
+    font-size: 1.4rem;
+    padding: 15px 30px 40px 30px;
+  }
+
+  .react-calendar__tile abbr[aria-label*="토요일"] {
+    color: ${(props) => props.theme.blue_1};
+  }
+
+  .react-calendar__tile--now {
+    background: #e4ffed;
+    border-radius: 0.3rem;
+  }
+
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus,
+  .react-calendar__tile--active {
+    background-color: ${(props) => props.theme.primaryGreen};
+    color: white;
+    border-radius: 0.3rem;
+  }
+
+  .react-calendar__navigation__arrow {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .react-calendar__tile.saturday {
+    color: ${(props) => props.theme.blue_1};
+  }
+`;
 
 const WritePage = () => {
   const navigate = useNavigate();
 
-  //현재 날짜 기준 상태 관리
-  const [currentDate, setCurrentDate] = useState(new Date())
+  const handleWriteTodayDiary = () => {
+    navigate("/write/todayDiary");
+  };
 
-  const handleBackMonth = () => {
-    setCurrentDate((prevDate) => {
-      const newDate = new Date(prevDate.getFullYear(), prevDate.getMonth() -1, 1)
-      return newDate
-    })
-  }
+  const today = new Date();
+  const [date, setDate] = useState(today);
 
-  const handleFrontMonth = () => {
-    setCurrentDate((prevDate) => {
-      const newDate = new Date(prevDate.getFullYear(), prevDate.getMonth() +1, 1)
-      return newDate
-    })
-  }
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+  };
 
-  const formatDate = (date) => {
-    const year = date.getFullYear()
-    const month = String(date.getMonth() +1).padStart(2, '0')
-    return `${year}.${month}`
-  }
+  const handleDateClick = (clickedDate) => {
+    navigate("/write/diary", { state: { selectedDate: clickedDate } });
+  };
 
-  const handleWriteDiary = () => {
-    navigate('/write/diary')
-  }
+  const tileClassName = ({ date }) => {
+    if (date.getDay() === 6 /* 토요일 */) {
+      return "saturday"; 
+    }
+    return "";
+  };
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <Grid
         container
-        marginTop={'20px'}
+        marginTop={"20px"}
         direction="column"
         justifyContent="center"
         alignItems="center"
       >
-        <Box display={"flex"} justifyContent={"space-between"}>
-          <FontAwesomeIcon
-            icon={faPlay}
-            rotation={180}
-            style={{
-              fontSize: '4rem',
-              color: '#BEEDCD',
-              marginBottom: '1rem',
-              marginRight: '10px',
-              cursor: 'pointer',
-            }}
-            onMouseOver={(e) => {
-              e.target.style.color = '#7EDC9C';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.color = '#BEEDCD';
-            }}
-            onClick={handleBackMonth}
-            ></FontAwesomeIcon>
-            <Typography
-              variant="h4"
-              style={{
-                color: "#5FB079",
-                fontWeight: "bold",
-                textAlign: "center", 
-                flex: "1", // 공간 균등 분배
-                marginLeft: "190px",
-                marginRight: "190px",
-                marginTop: "10px",
-              }}
-            >
-              {formatDate(currentDate)}
-            </Typography>
-            <FontAwesomeIcon
-            icon={faPlay}
-            style={{
-              fontSize: '4rem',
-              color: '#BEEDCD',
-              marginBottom: '1rem',
-              marginLeft: '10px',
-              cursor: 'pointer',
-            }}
-            onMouseOver={(e) => {
-              e.target.style.color = '#7EDC9C';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.color = '#BEEDCD';
-            }}
-            onClick={handleFrontMonth}
-            ></FontAwesomeIcon>
-        </Box>
-        <Button 
-          variant="contained" 
-          color="primary" 
+        <StyledCalendar
+          className="custom-calendar"
+          value={date}
+          tileClassName={tileClassName} 
+          onChange={handleDateChange}
+          onClickDay={handleDateClick}
+          formatDay={(locale, date) => moment(date).format("D")}
+          formatYear={(locale, date) => moment(date).format("YYYY")}
+          formatMonthYear={(locale, date) => moment(date).format("YYYY. MM")}
+          calendarType="gregory"
+          showNeighboringMonth={false}
+          next2Label={null}
+          prev2Label={null}
+          minDetail="month" 
+          maxDetail="month"
+        />
+
+        <Button
+          variant="contained"
+          color="primary"
           style={{
-            width: '20rem', 
-            height: '3rem', 
-            fontSize: '1.4rem', 
-            fontFamily: '"Jua", serif', 
-            backgroundColor: '#BEEDCD', 
-            color: '#7EDC9C'
+            width: "20rem",
+            height: "3rem",
+            fontSize: "1.4rem",
+            fontFamily: '"Jua", serif',
+            backgroundColor: "#BEEDCD",
+            color: "#7EDC9C",
+            marginTop: "16px"
           }}
           onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#7EDC9C';
-            e.target.style.color = '#fff';
+            e.target.style.backgroundColor = "#7EDC9C";
+            e.target.style.color = "#fff";
           }}
           onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#BEEDCD';
-            e.target.style.color = '#7EDC9C';
+            e.target.style.backgroundColor = "#BEEDCD";
+            e.target.style.color = "#7EDC9C";
           }}
-          onClick={handleWriteDiary}
-          >
-            일기 작성
+          onClick={handleWriteTodayDiary}
+        >
+          오늘의 일기 작성
         </Button>
       </Grid>
     </>
-  )
-}
+  );
+};
 
-export default WritePage
+export default WritePage;

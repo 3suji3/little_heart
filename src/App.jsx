@@ -8,8 +8,18 @@ import WritePage from './pages/WritePage';
 import WriteDiary from './components/Write/WriteDiary';
 import EmotionPage from './pages/EmotionPage';
 
+import { ThemeProvider } from 'styled-components';
+
+const theme = {
+  primaryGreen: '#5FB079',
+  red_1: '#FF0000', // 일요일 색상
+  blue_1: '#0000FF', // 토요일 색상
+  gray_5: '#F5F5F5', // 배경색
+};
+
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       <Routes>
         <Route path="/" element={<Main />} />
@@ -20,9 +30,11 @@ function App() {
         <Route path='today' element={<Today />} />
         <Route path='write' element={<WritePage />} />
         <Route path='write/diary' element={<WriteDiary />} />
+        <Route path='write/todayDiary' element={<WriteDiary />} />
         <Route path='write/diary/emotion' element={<EmotionPage />} />
       </Routes>
     </div>
+    </ThemeProvider>
   );
 }
 
