@@ -6,9 +6,11 @@ import Main from './components/Main';
 import Today from './pages/TodayPage';
 import WritePage from './pages/WritePage';
 import WriteDiary from './components/Write/WriteDiary';
+import LookDiary from './components/Write/LookDiary';
 import EmotionPage from './pages/EmotionPage';
 
 import { ThemeProvider } from 'styled-components';
+import EditDiary from './components/Write/EditDiary';
 
 const theme = {
   primaryGreen: '#5FB079',
@@ -29,8 +31,10 @@ function App() {
         </Route>
         <Route path='today' element={<Today />} />
         <Route path='write' element={<WritePage />} />
+        <Route path='write/lookDiary' element={<LookDiary />} />
         <Route path='write/diary' element={<WriteDiary />} />
         <Route path='write/todayDiary' element={<WriteDiary />} />
+        <Route path='write/editDiary' element={<EditDiary/>} />
         <Route path='write/diary/emotion' element={<EmotionPage />} />
       </Routes>
     </div>
