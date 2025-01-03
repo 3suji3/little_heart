@@ -85,13 +85,14 @@ const TodayPage = () => {
     todayResponse()
   }, []);
   return (
-    <>
+    <Grid>
       <Header />
 
       <Grid
         container
         direction="column"
         alignItems="center"
+        justifyContent="center"
         style={{
           marginTop: '40px',
           padding: '20px',
@@ -163,7 +164,7 @@ const TodayPage = () => {
           />
         </Box>
       </Grid>
-    </>
+    </Grid>
   );
 };
 

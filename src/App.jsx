@@ -13,10 +13,9 @@ import { ThemeProvider } from 'styled-components';
 import EditDiary from './components/Write/EditDiary';
 
 const theme = {
-  primaryGreen: '#5FB079',
+  green_1: '#5FB079',
   red_1: '#FF0000', // 일요일 색상
   blue_1: '#0000FF', // 토요일 색상
-  gray_5: '#F5F5F5', // 배경색
 };
 
 function App() {

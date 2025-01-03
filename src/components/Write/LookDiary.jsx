@@ -152,21 +152,12 @@ const LookDiary = () => {
             }}
           >
             <Typography
-              variant="h6"
+              variant="h5"
               style={{
                 color: "#5FB079",
-                fontWeight: "bold",
-                marginRight: "10px",
-              }}
-            >
-              제목:
-            </Typography>
-            <Typography
-              variant="h6"
-              style={{
-                color: "#000",
                 flex: "1",
                 wordWrap: "break-word",
+                fontWeight: "bold",
               }}
             >
               {diaryData.title}
@@ -187,26 +178,22 @@ const LookDiary = () => {
             }}
           >
             <Typography
-              variant="h6"
-              style={{
-                color: "#5FB079",
-                fontWeight: "bold",
-                marginRight: "10px",
-              }}
-            >
-              내용:
-            </Typography>
-            <Typography
               variant="body1"
               style={{
-                color: "#000",
+                color: "#5FB079",
                 flex: "1",
                 wordWrap: "break-word",
+                fontWeight: "bold",
               }}
             >
               {diaryData.content}
             </Typography>
           </Box>
+          <Box
+            borderTop={"3px solid #5FB079"}
+            width="100%"
+            marginBottom="20px"
+          />
 
           <Box
             display="flex"

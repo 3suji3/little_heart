@@ -47,7 +47,7 @@ const StyledCalendar = styled(Calendar)`
       color: ${(props) => props.theme.gray_5};
     }
     font-size: 1.4rem;
-    padding: 15px 30px 40px 30px;
+    padding: 12px 25px 26px 25px;
   }
 
   .react-calendar__tile abbr[aria-label*="토요일"] {
@@ -62,7 +62,7 @@ const StyledCalendar = styled(Calendar)`
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus,
   .react-calendar__tile--active {
-    background-color: ${(props) => props.theme.primaryGreen};
+    background-color: ${(props) => props.theme.green_1};
     color: white;
     border-radius: 0.3rem;
   }
@@ -98,7 +98,7 @@ const WritePage = () => {
 
   const renderTileContent = ({ date }) => {
     const formattedDate = moment(date).format("YYYY.MM.DD");
-     const diaryForDate = diaries.find((diary) => diary.date === formattedDate); // 특정 날짜에 해당하는 다이어리 검색
+    const diaryForDate = diaries.find((diary) => diary.date === formattedDate); // 특정 날짜에 해당하는 다이어리 검색
 
     if (diaryForDate) {
       return <div>📖</div>;
@@ -121,6 +121,11 @@ const WritePage = () => {
     const formattedDate = moment(clickedDate).format("YYYY.MM.DD"); // 날짜 포맷팅
     const diaryForDate = diaries.find((diary) => diary.date === formattedDate); // 해당 날짜의 다이어리 검색
 
+    if (clickedDate > today) {
+      alert("미래 날짜의 일기는 쓸 수 없습니다.");
+      return;
+    }
+
     if (diaryForDate) {
       navigate("/write/lookDiary", { state: { selectedDate: clickedDate } });
     } else {
@@ -131,6 +136,9 @@ const WritePage = () => {
   const tileClassName = ({ date }) => {
     if (date.getDay() === 6 /* 토요일 */) {
       return "saturday"; 
+    }
+    if (date > today) {
+      return "disabled-date";
     }
     return ""; 
   };
@@ -150,8 +158,8 @@ const WritePage = () => {
           className="custom-calendar"
           value={date} // 현재 선택된 날짜
           tileClassName={tileClassName} // 타일 클래스 지정
-          onChange={handleDateChange} // 날짜 변경 이벤트 핸들러
-          onClickDay={handleDateClick} // 날짜 클릭 이벤트 핸들러
+          onChange={handleDateChange} // 날짜 변경 이벤트 
+          onClickDay={handleDateClick} // 날짜 클릭 이벤트
           formatDay={(locale, date) => moment(date).format("D")} // 날짜 형식
           formatYear={(locale, date) => moment(date).format("YYYY")} // 연도 형식
           formatMonthYear={(locale, date) => moment(date).format("YYYY. MM")} // 월/연도 형식

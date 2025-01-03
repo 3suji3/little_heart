@@ -48,9 +48,9 @@ const EmotionPage = () => {
 
         // 이모지 이미지 생성 
         const imageResponse = await openai.images.generate({
-          prompt: `사용자의 일기를 기반으로 감정적인 이모티콘을 만들어 주세요!: "${userDiary}". 이모티콘은 사용자가 공감이 느껴지게 해야 합니다!!`,
+          prompt: `사용자의 일기를 기반으로 사용자 일기에 어울릴만한, 또 사용자가 정말 공감할만한 텍스트 이모지와 비슷하게 생긴 귀여운 느낌의 그림으로 나타내줘 : "${userDiary}".`,
           n: 1,
-          size: "256x256", // 이모지 크기 
+          size: "256x256", // 이모지 크기
         });
 
         setEmojiUrl(imageResponse.data[0].url); // 생성된 이미지 URL 설정
@@ -89,7 +89,6 @@ const EmotionPage = () => {
             style={{
               height: "180px",
               marginBottom: "20px",
-              marginTop: "-50px",
             }}
           />
         ) : (
