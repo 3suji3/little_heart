@@ -24,7 +24,6 @@ const WriteDiary = () => {
 
   const navigate = useNavigate();
 
-  // State to handle diary data
   const [diaryData, setDiaryData] = useState({
     title: "",
     content: "",
@@ -52,7 +51,7 @@ const WriteDiary = () => {
       await Server.post("/diary", newDiary);
 
       alert("일기가 저장되었습니다.")
-      navigate("/write")
+      navigate("/write/diary/emotion", { state: { diary: newDiary.content } });
     } catch (error) {
       console.error("일기 저장 실패: ", error)
       alert("일기 저장 중 오류 발생")

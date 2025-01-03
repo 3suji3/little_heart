@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Grid,
-  Typography,
-  TextField,
-  Button,
-  createTheme,
-  ThemeProvider,
-} from "@mui/material";
+import { Box, Grid, Typography, TextField, Button, createTheme, ThemeProvider } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../Header";
-import Server from "../../utils/API"; // 서버 API
+import Server from "../../utils/API"; 
 import moment from "moment";
 
 const theme = createTheme({
@@ -66,7 +58,7 @@ const EditDiary = () => {
       await Server.put(`/diary/${updatedDiary.id}`, updatedDiary);
 
       alert("일기가 성공적으로 수정되었습니다!");
-      navigate("/write"); 
+      navigate("/write/diary/emotion", { state: { diary: updatedDiary.content } }); 
     } catch (error) {
       console.error("일기 수정 실패: ", error);
       alert("일기 수정 중 오류가 발생했습니다.");
@@ -214,7 +206,7 @@ const EditDiary = () => {
             }}
             onClick={handleSaveDiary}
           >
-            수정 저장
+            저장
           </Button>
         </Grid>
       </Grid>
