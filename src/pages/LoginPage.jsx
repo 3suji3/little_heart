@@ -48,7 +48,7 @@ const LoginPage = () => {
   
       if (user) {
         alert(`${user.username}님 환영합니다.`);
-        localStorage.setItem('username', user.username);
+        localStorage.setItem('user', JSON.stringify(user));
         navigate('/today', { state: { username: user.username } });
       } else {
         alert('아이디 또는 비밀번호가 잘못되었습니다.');

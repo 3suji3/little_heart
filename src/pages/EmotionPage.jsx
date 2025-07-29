@@ -23,6 +23,9 @@ const EmotionPage = () => {
     const emotionResponse = async () => {
       try {
         const userDiary = location.state?.diary || ""; // 전달된 일기 데이터 
+        const diaryId = location.state?.id; // 일기 고유 id
+
+        console.log("넘어온 diaryId:", diaryId);
 
         if (!userDiary) {
           setAiResponse("일기를 작성하지 않은 것 같아요. 돌아가서 작성해 주세요!");
@@ -48,13 +51,23 @@ const EmotionPage = () => {
 
         // 이모지 이미지 생성 
         const imageResponse = await openai.images.generate({
-          prompt: `사용자의 일기를 기반으로 사용자 일기에 어울릴만한, 또 사용자가 정말 공감할만한 텍스트 이모지와 비슷하게 생긴 귀여운 느낌의 그림으로 나타내줘 : "${userDiary}".`,
+          prompt: `사용자가 정말 공감할만한 감성적이고 귀여운 이모지 느낌의 이미지로 나타내줘 : "${userDiary}". 반드시 이 글과 어울릴만한 것으로 그려야해!!`,
           n: 1,
-          size: "256x256", // 이모지 크기
+          size: "256x256", 
         });
 
-        setEmojiUrl(imageResponse.data[0].url); // 생성된 이미지 URL 설정
-      } catch (error) {
+        const generatedEmojiUrl = imageResponse.data[0].url
+        setEmojiUrl(generatedEmojiUrl)
+
+        await fetch(`http://localhost:9999/diary/${diaryId}`, {
+          method: "PATCH", // 기존 일기에 감정 데이터 추가
+          headers: { "Content-Type": "application/json"},
+          body: JSON.stringify({
+            emotionResponse: aiMessage,
+            emojiUrl: generatedEmojiUrl,
+          })
+        })
+      } catch (error) { 
         console.error("OpenAI API 호출 실패: ", error);
         setAiResponse("AI 응답을 가져오지 못했습니다. 다시 시도해 주세요.");
       }
@@ -93,7 +106,7 @@ const EmotionPage = () => {
           />
         ) : (
           <Typography variant="h6" style={{ color: "#5FB079" }}>
-            이모지를 생성 중입니다...
+            이미지를 생성 중입니다...
           </Typography>
         )}
         <Typography
@@ -102,6 +115,8 @@ const EmotionPage = () => {
             color: "#5FB079",
             fontWeight: "bold",
             width: "500px",
+            maxHeight: "9rem", 
+            overflowY: "auto",
           }}
         >
           {aiResponse}

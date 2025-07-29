@@ -14,9 +14,12 @@ const TodayPage = () => {
   const [author, setAuthor] = useState("")
 
   useEffect(() => {
-    const storedUsername = localStorage.getItem('username');
-    if (storedUsername) {
-      setUsername(storedUsername);
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      if(user.username) {
+        setUsername(user.username);
+      }
     }
 
     //가장 최근의 다이어리 데이터, openai 호출

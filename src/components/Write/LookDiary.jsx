@@ -16,7 +16,14 @@ const theme = createTheme({
 
 const LookDiary = () => {
   const location = useLocation();
-  const selectedDate = useMemo(() => location.state?.selectedDate || new Date(), [location.state]);
+  const selectedDate = useMemo(() => {
+    const dateFromState = location.state?.selectedDate;
+    if (!dateFromState) return new Date();
+    if (typeof dateFromState === "string") {
+      return moment(dateFromState, 'YYYY.MM.DD').toDate();
+    }
+    return dateFromState;
+  }, [location.state]);
   // useMemo: 불필요한 재계산을 방지
 
   const navigate = useNavigate();
@@ -24,15 +31,24 @@ const LookDiary = () => {
   const [diaryData, setDiaryData] = useState(null); 
   const [loading, setLoading] = useState(true); 
 
-  const getFormattedDate = (date) => {
-    return moment(date).format("YYYY.MM.DD");
-  };
+  const getFormattedDate = (date) => moment(date).format("YYYY.MM.DD");
 
   useEffect(() => {
     const formattedDate = getFormattedDate(selectedDate); // 선택된 날짜 포맷
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      setDiaryData(null);
+      setLoading(false);
+      return;
+    }
+
     Server.get("/diary")
       .then((response) => {
-        const diary = response.data.find((d) => d.date === formattedDate);
+        const user = JSON.parse(localStorage.getItem("user"));
+        const diary = response.data.find((d) => {
+          const diaryDate = d.date;
+         return diaryDate === formattedDate && d.userId === user.id;
+        });
         setDiaryData(diary || null);
       })
       .catch((error) => {
@@ -47,6 +63,11 @@ const LookDiary = () => {
   const handleEdit = () => {
     navigate("/write/editDiary", { state: { diaryData } });
   };
+
+  const handleEmotion = () => {
+    if (!diaryData) return alert("일기 데이터가 없습니다.");
+    navigate("/write/diary/lookEmotion");
+  }
 
   const handleDelete = () => {
     if (window.confirm("정말로 삭제하시겠습니까?")) {
@@ -160,7 +181,7 @@ const LookDiary = () => {
                 fontWeight: "bold",
               }}
             >
-              {diaryData.title}
+              {diaryData?.title || "제목오류"}
             </Typography>
           </Box>
 
@@ -186,7 +207,7 @@ const LookDiary = () => {
                 fontWeight: "bold",
               }}
             >
-              {diaryData.content}
+              {diaryData?.content || "내용 오류"}
             </Typography>
           </Box>
           <Box
@@ -229,6 +250,30 @@ const LookDiary = () => {
             </Button>
             <Button
               variant="contained"
+              color="primary"
+              onClick={handleEmotion}
+              style={{
+                width: "16rem",
+                height: "3rem",
+                fontSize: "1.4rem",
+                fontFamily: '"Jua", serif',
+                backgroundColor: "#BEEDCD",
+                color: "#7EDC9C",
+                marginTop: "16px",
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = "#7EDC9C"; 
+                e.target.style.color = "#fff";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = "#BEEDCD"; 
+                e.target.style.color = "#7EDC9C";
+              }}
+            >
+              공감 ♥️
+            </Button>
+            <Button
+              variant="contained"
               onClick={handleDelete}
               style={{
                 width: "16rem",
@@ -248,7 +293,7 @@ const LookDiary = () => {
                 e.target.style.color = "#7EDC9C";
               }}
             >
-              삭제❌
+              삭제🗑️
             </Button>
           </Box>
         </Grid>

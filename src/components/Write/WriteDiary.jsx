@@ -39,19 +39,34 @@ const WriteDiary = () => {
       alert("모든 필드를 채워주세요.");
       return;
     }
+  
+  const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      alert("로그인 후 이용 가능합니다.");
+      navigate("/login");
+      return;
+    }
 
     try {
+      const user = JSON.parse(localStorage.getItem("user"));
       const newDiary = {
         id: uuidv4(), //랜덤 id 생성
         date: getFormattedDate(selectedDate),
         title: diaryData.title,
         content: diaryData.content,
+        userId: user.id
       };
 
-      await Server.post("/diary", newDiary);
+      console.log("생성된 일기 ID: ", newDiary)
 
-      alert("일기가 저장되었습니다.")
-      navigate("/write/diary/emotion", { state: { diary: newDiary.content } });
+      const response = await Server.post("/diary", newDiary);
+
+      if (response.status === 201 ) { //Created 상태인지 확인
+        alert("일기가 저장되었습니다.")
+        navigate("/write/diary/emotion", { state: { id: newDiary.id, diary: newDiary.content } });
+      } else {
+        throw new Error("일기 저장에 문제가 있습니다 ㅠㅠ")
+      }
     } catch (error) {
       console.error("일기 저장 실패: ", error)
       alert("일기 저장 중 오류 발생")

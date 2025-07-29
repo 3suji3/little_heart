@@ -28,8 +28,8 @@ const EditDiary = () => {
     // 기존 다이어리 데이터 로드 
     if (diaryDataFromState) {
       setDiaryData({
-        title: diaryDataFromState.title,
-        content: diaryDataFromState.content,
+        title: diaryDataFromState?.title || "",
+        content: diaryDataFromState?.content || "",
       });
     }
   }, [diaryDataFromState]);
@@ -48,8 +48,9 @@ const EditDiary = () => {
 
     try {
       const updatedDiary = {
-        id: diaryDataFromState.id, // 기존 ID 유지
-        date: diaryDataFromState.date, // 날짜 유지
+        ...diaryDataFromState,
+        // id: diaryDataFromState.id, // 기존 ID 유지
+        // date: diaryDataFromState.date, // 날짜 유지
         title: diaryData.title,
         content: diaryData.content,
       };
@@ -58,7 +59,9 @@ const EditDiary = () => {
       await Server.put(`/diary/${updatedDiary.id}`, updatedDiary);
 
       alert("일기가 성공적으로 수정되었습니다!");
-      navigate("/write/diary/emotion", { state: { diary: updatedDiary.content } }); 
+      navigate("/write/diary/emotion", { 
+        state: { id: updatedDiary.id, diary: updatedDiary.content } 
+      }); 
     } catch (error) {
       console.error("일기 수정 실패: ", error);
       alert("일기 수정 중 오류가 발생했습니다.");

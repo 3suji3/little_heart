@@ -23,106 +23,283 @@
   ],
   "diary": [
     {
-      "id": "8d4e",
-      "date": "2024.12.22",
-      "title": "꾸에에렉",
-      "content": "꾸엙 난 아무 생각이 없습니다요."
+      "id": "d1",
+      "userId": "kig0423",
+      "date": "2025.07.21",
+      "title": "비 오는 월요일",
+      "content": "출근길에 비를 맞았더니 하루 종일 축축하다. 우산은 왜 매번 안 챙기는 걸까.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "27e7",
-      "date": "2024.12.24",
-      "title": "예진아 감기 낳아(?)",
-      "content": "감기나으렴 ㅠㅠ 흐어엉"
+      "id": "d2",
+      "userId": "kig0423",
+      "date": "2025.07.22",
+      "title": "일상은 반복된다",
+      "content": "하루가 너무 빨리 가는데, 뭘 했는지 모르겠다. 그냥 밥 먹고, 일하고, 또 밥 먹고.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "4e46",
-      "date": "2024.12.25",
-      "title": "크리스마스인데 코드 짜는 민서",
-      "content": "고생한다 야... 파이팅하렴"
+      "id": "d3",
+      "userId": "kig0423",
+      "date": "2025.07.23",
+      "title": "커피 중독",
+      "content": "오늘 커피만 4잔 마셨다. 이제 그만 마셔야지...라고 생각하면서 또 한 잔.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "date": "2024.12.26",
-      "title": "실탄 사격 재밌엉",
-      "content": "우헤헤헿 10점짜리 2개 맞췄당",
-      "id": "f6dc"
+      "id": "d4",
+      "userId": "kig0423",
+      "date": "2025.07.24",
+      "title": "회식",
+      "content": "회식은 왜 이렇게 피곤한 걸까. 억지로 웃는 것도 일이야.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "60cc",
-      "date": "2025.01.01",
-      "title": "새해 첫날, 새로운 다짐",
-      "content": "2025년의 첫날이 밝았다. 새해의 시작이라는 생각에 마음이 설레면서도 약간의 책임감이 느껴졌다. 아침에 눈을 뜨자마자 가족들과 \"새해 복 많이 받으세요!\"라는 인사를 주고받으며 하루를 시작했다. 따뜻한 떡국 한 그릇을 먹으며 한 살 더 먹은 느낌을 실감했다.\n\n오후에는 노트북을 꺼내 내 새해 다짐을 적어 보았다. 올해는 작심삼일로 끝내지 않고, 진짜 의미 있는 변화를 만들어 가고 싶었다. 첫 번째 다짐은 매일 아침 일찍 일어나 운동을 하는 것, 두 번째는 꾸준히 책을 읽어 내 생각의 폭을 넓히는 것이었다. 그리고 세 번째는 작년보다 더 자주 가족과 친구들에게 감사한 마음을 표현하는 것이다.\n\n저녁에는 집 근처 공원으로 산책을 나갔다. 겨울의 차가운 공기 속에서 한 해의 목표를 다시 곱씹어 보았다. 공원에 있는 연못은 얼어 있었고, 하늘에는 별들이 총총 떠 있었다. 이 아름다운 풍경을 보며 마음속에 새로운 다짐이 더 확고해지는 것 같았다.\n\n집으로 돌아와 올해를 시작하며 찍은 사진들을 보니, 새해 첫날이 소중한 추억으로 남을 것 같다. 내년 이맘때 다시 이 일기를 보며, 올해 내 다짐들이 얼마나 이루어졌는지 확인해 보고 싶다. 2025년이 나에게, 그리고 내 주변 사람들에게 행복과 성장이 가득한 한 해가 되기를 간절히 바란다."
+      "id": "d5",
+      "userId": "kig0423",
+      "date": "2025.07.25",
+      "title": "쉬고 싶다",
+      "content": "집에만 있고 싶다. 아무것도 안 하고 이불 속에서 하루 종일 넷플릭스 보고 싶어.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "28620586-5b24-4f13-ae36-e81c15c100c4",
-      "date": "2025.01.02",
-      "title": "첫 눈 오는 날",
-      "content": "오늘 아침 창문을 열자마자 세상이 하얗게 변한 것을 보고 깜짝 놀랐다. 올해 첫눈이었다. 하늘에서 천천히 내려오는 눈송이를 보며 잠시 멍하니 서 있었다. 밖으로 나가자 마치 동화 속 세상에 들어온 듯한 기분이 들었다. 친구들과 약속도 없이 자연스럽게 동네 놀이터로 모였다. 모두 손을 호호 불며 눈사람을 만들기 시작했다. 코는 당근, 눈은 돌멩이로 장식했다. 점점 완성되어 가는 눈사람을 보며 다들 뿌듯해했다. 이후에는 신나게 눈싸움을 하며 뛰어놀았다. 옷이 다 젖어버렸지만, 너무 즐거운 나머지 추운 줄도 몰랐다. 집에 돌아오자마자 따뜻한 코코아를 마시며 오늘의 행복한 기억을 떠올렸다. 겨울의 시작이 이렇게 설레는 순간으로 가득 차다니, 정말 기분 좋은 하루였다."
+      "id": "d6",
+      "userId": "kig0423",
+      "date": "2025.07.26",
+      "title": "꿈",
+      "content": "이상한 꿈을 꿨다. 무대에 서 있는데 아무도 나를 보지 않더라. 무시당하는 기분.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "896517ba-d2e7-4ab9-9587-f90971bbd619",
-      "date": "2024.12.01",
-      "title": "12월의 시작",
-      "content": "매년 12월 이제는 두렵지 않아 기다려져~"
+      "id": "d7",
+      "userId": "kig0423",
+      "date": "2025.07.27",
+      "title": "재충전",
+      "content": "오랜만에 친구를 만나 수다 떨었다. 조금 살아난 기분이다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "bbfe236f-6e79-43e1-a305-8cd159fef66d",
-      "date": "2024.12.09",
-      "title": "우어",
-      "content": "워..."
+      "id": "d8",
+      "userId": "kig0423",
+      "date": "2025.07.28",
+      "title": "새로운 계획",
+      "content": "9월부터 뭔가 배우고 싶다. 내가 나를 좀 더 잘 챙겨야겠어.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "3711398c-7956-4b16-89c9-e1254b880ea3",
-      "date": "2024.12.16",
-      "title": "달리고달리고",
-      "content": "달리고달리고 열정열정열정"
+      "id": "d9",
+      "userId": "back321",
+      "date": "2025.07.21",
+      "title": "아침부터 배고픔",
+      "content": "눈 뜨자마자 배고팠다. 삼겹살이 땡겼는데 현실은 컵라면...",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "002062bc-2b77-45af-b186-58d9207f103c",
-      "date": "2024.12.31",
-      "title": "올해가 끝?",
-      "content": "올해가 끝난다니 정말 실감이 안난다. 난 아직 2022년에 머물러 있는거 같은데.. 내가 이제 곧있음 19살이라니.. ㅠㅠ "
+      "id": "d10",
+      "userId": "back321",
+      "date": "2025.07.22",
+      "title": "게임의 늪",
+      "content": "새벽 3시까지 게임했다. 나 자신에게 실망하지만, 또 재밌었다...",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "1bec8989-70f6-41be-a49a-f98a980b3622",
-      "date": "2024.06.30",
-      "title": "핫핫",
-      "content": "여름은 핫핫 더워더워"
+      "id": "d11",
+      "userId": "back321",
+      "date": "2025.07.23",
+      "title": "산책",
+      "content": "밤에 동네 한 바퀴 돌았다. 생각보다 기분 좋았다. 운동도 나쁘지 않네.",
+      "emotionResponse": "밤 산책을 통해 작은 행복을 발견하신 것 같아 기쁘네요. 조용한 밤공기를 마시며 느끼는 상쾌함은 정말 특별한 것 같아요. 운동이 이렇게 기분을 좋게 해줄 수 있다는 걸 새롭게 느끼셨다니 앞으로 자주 즐길 수 있길 바라요. 몸과 마음이 다 함께 건강해지는 순간들이 계속되면 좋겠어요. 🌙😊",
+      "emojiUrl": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-lD0kpbT6zENNbGLOVO7SPXho/user-hKh7yuVOcNJS0aXBX4rSGD91/img-riSenEdUljwhWFkESHO4uncL.png?st=2025-07-29T07%3A20%3A22Z&se=2025-07-29T09%3A20%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-28T22%3A00%3A46Z&ske=2025-07-29T22%3A00%3A46Z&sks=b&skv=2024-08-04&sig=OqoMLgIWu9%2BPGCa0qB58nblL2VkCmtmf6rIL1yyxB2s%3D"
     },
     {
-      "id": "dd5e2bee-55bf-4d54-a3e0-f5c44c6c6a3e",
-      "date": "2024.06.24",
-      "title": "댄스댄스",
-      "content": "뭘 고를지 몰라 다 준비해봤어 둘 중에 하나만 골라 yes or yes\n니 마음을 몰라 다 준비해봤어 하나만 선택해 어서 yes or yes\n싫어는 싫어 나 아니면 우리 선택을 존중해 거절은 거절해 고를지 몰라 다 준비해봤어 둘 중에 하나만 골라 yes or yes\n네 마음을 몰라 다 준비해봤어 둘 중에 하나만 골라 yes or yes\n싫어는 싫어 너 아니면 우리 선택을 존중해 거절은 거절해 선택지는 하나, 자 선택은 니 맘\nIt's all up to you 둘 중에 하나만 골라 yes or yes?"
+      "id": "d12",
+      "userId": "back321",
+      "date": "2025.07.24",
+      "title": "소소한 행복",
+      "content": "마트에서 1+1 과자 득템. 이런 게 바로 인생의 낙.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "373f5015-987d-4102-9289-76d2c396679a",
-      "date": "2024.06.20",
-      "title": "꾸엑",
-      "content": "더위 탄다... 꿹"
+      "id": "d13",
+      "userId": "back321",
+      "date": "2025.07.25",
+      "title": "영화감상",
+      "content": "혼자 영화 봤다. 몰입감 장난 없었음. 이런 여유 좋다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "80893e7e-bdaf-4113-9b16-fa299c54db34",
-      "date": "2024.06.12",
-      "title": "랄랄랄",
-      "content": "여름엔 역시 노래 듣기 랄라랄라랄라라 랄라라랄라라라"
+      "id": "d14",
+      "userId": "back321",
+      "date": "2025.07.26",
+      "title": "요리 도전",
+      "content": "된장찌개를 끓였는데, 된장을 너무 넣었다. 그래도 먹을만했다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
     },
     {
-      "id": "76461b64-3454-45e1-94d6-74599f67d8d0",
-      "date": "2024.06.06",
-      "title": "음",
-      "content": "일기 쓸게 없다"
+      "id": "d15",
+      "userId": "back321",
+      "date": "2025.07.27",
+      "title": "친구랑 맥주 한 잔",
+      "content": "오랜만에 친구 만나 수다 떨며 맥주. 이 맛에 산다. 호호",
+      "emotionResponse": "오랜만에 친구와 수다를 떨며 맥주를 마셨다니, 정말 즐거운 시간이었겠네요! 그동안 쌓였던 일상의 스트레스가 사라지고, 마음이 한결 가벼워졌을 것 같아요. 친구와의 소중한 시간은 언제나 큰 행복을 주죠. 이런 순간들이 삶의 활력소가 되는 것 같아요. 함께 웃고 이야기 나눈 그 시간이 당신에게 앞으로도 힘이 되길 바랄게요. 😊",
+      "emojiUrl": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-lD0kpbT6zENNbGLOVO7SPXho/user-hKh7yuVOcNJS0aXBX4rSGD91/img-UB4CI8qH8v5r1WIKiqRyyFvh.png?st=2025-07-29T03%3A15%3A09Z&se=2025-07-29T05%3A15%3A09Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-28T17%3A15%3A06Z&ske=2025-07-29T17%3A15%3A06Z&sks=b&skv=2024-08-04&sig=RE75py8Co6%2BwsTk4bCNtyxRKmss0ivcmfntdNRgQBx0%3D"
     },
     {
-      "id": "4075e218-0d4f-4a03-943a-905cf25038e9",
-      "date": "2024.06.01",
-      "title": "배고프다!!",
-      "content": "나는 배가 무지무지 고프다~!!"
+      "id": "d16",
+      "date": "2025.07.28",
+      "userId": "back321",
+      "title": "백수의 일상",
+      "content": "할 일은 없지만 시간이 왜 이렇게 빨리 가는 걸까. 허무하다.",
+      "emotionResponse": "그런 기분 정말 이해해. 때로는 시간이 너무 빨리 흘러가고, 우리는 그 속에서 특별히 뭔가를 이뤄내지 못한 것 같아 허무함을 느낄 때가 있어. 하지만 이런 순간들이 꼭 나쁜 것만은 아니라고 생각해. 쉬면서 자기 자신을 돌아볼 수 있는 시간이기도 하니까. 조금 느긋하게, 작은 것들에 감사함을 느끼며 보내는 것도 좋을 것 같아. 네가 그 시간을 어떻게 보내든, 의미 있는 시간일 거야. 🌷",
+      "emojiUrl": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-lD0kpbT6zENNbGLOVO7SPXho/user-hKh7yuVOcNJS0aXBX4rSGD91/img-CandWz8TkJ8DQtyA9Wi8HYNP.png?st=2025-07-29T03%3A03%3A06Z&se=2025-07-29T05%3A03%3A06Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=8b33a531-2df9-46a3-bc02-d4b1430a422c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-29T04%3A03%3A06Z&ske=2025-07-30T04%3A03%3A06Z&sks=b&skv=2024-08-04&sig=ji9M2co%2BA9eUyJlscjHj9W3l0mHW/JZ/BF9KJ7%2B%2Bx8Y%3D"
     },
     {
-      "id": "85277cf6-a2d6-463d-bd1f-412ea03528d8",
-      "date": "2025.01.03",
-      "title": "공부의 즐거움",
-      "content": "오늘은 학교에서 정말 어려운 수학 문제를 풀었다. 처음에는 문제를 보고 답이 나오지 않아 머리가 복잡했다. 계속 고민하다 보니 어느새 시간이 훌쩍 지나 있었다. 한 번 더 시도해 보기로 마음먹고 선생님께 힌트를 부탁했다. 선생님께서 중요한 포인트를 짚어 주시자 답이 조금씩 보이기 시작했다. 마침내 정답을 찾았을 때의 기쁨은 말로 다 표현할 수 없었다. 선생님께서 칭찬하시며 더 어려운 문제를 주셨고, 이번에도 도전해 보았다. 이런 과정을 통해 스스로 해낼 수 있다는 자신감을 얻었다. 집에 와서도 교과서를 다시 보며 오늘 배운 내용을 정리했다. 어렵게 느껴졌던 수학이 조금씩 흥미로워지는 걸 보며 나도 모르게 웃음이 났다. 앞으로도 이런 기쁨을 계속 느낄 수 있도록 꾸준히 노력해야겠다."
+      "id": "d17",
+      "userId": "bac1118",
+      "date": "2025.07.21",
+      "title": "아침 러닝",
+      "content": "오랜만에 새벽에 뛰었다. 땀이 흐르니 머리도 맑아지는 느낌.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d18",
+      "userId": "bac1118",
+      "date": "2025.07.22",
+      "title": "다이어트 중",
+      "content": "닭가슴살은 질리는데, 건강을 생각하면 참아야지.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d19",
+      "userId": "bac1118",
+      "date": "2025.07.23",
+      "title": "헬스장에서",
+      "content": "벤치프레스 60kg 성공! 내가 점점 강해지는 기분이다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d20",
+      "userId": "bac1118",
+      "date": "2025.07.24",
+      "title": "유혹",
+      "content": "치킨 냄새가 너무 강했다. 하지만 참았다. 나 칭찬해!",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d21",
+      "userId": "bac1118",
+      "date": "2025.07.25",
+      "title": "식단 루틴",
+      "content": "닭+고구마+브로콜리. 반복되지만 몸이 가벼워진다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d22",
+      "userId": "bac1118",
+      "date": "2025.07.26",
+      "title": "스트레칭",
+      "content": "운동만큼 중요한 게 회복. 오늘은 요가로 마무리.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d23",
+      "userId": "bac1118",
+      "date": "2025.07.27",
+      "title": "몸무게 체크",
+      "content": "1kg 줄었다. 눈물 날 정도로 기쁘다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d25",
+      "userId": "user1234",
+      "date": "2025.07.21",
+      "title": "멘붕의 시작",
+      "content": "포트폴리오 계획 세우는 중. 근데 뭐부터 해야 할지 모르겠다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d26",
+      "userId": "user1234",
+      "date": "2025.07.22",
+      "title": "디자인 시안 고민",
+      "content": "Figma 켜고 멍 때리기 2시간째. 집중력이 왜 이러지.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d27",
+      "userId": "user1234",
+      "date": "2025.07.23",
+      "title": "살짝 감 잡았다",
+      "content": "드디어 와이어프레임 구상 완료! 조금은 진전된 느낌.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d28",
+      "userId": "user1234",
+      "date": "2025.07.24",
+      "title": "컨셉 정리",
+      "content": "전체적인 톤앤매너를 잡았다. 약간 미니멀 + 감성 느낌?",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d29",
+      "userId": "user1234",
+      "date": "2025.07.25",
+      "title": "디자인 1차 완성",
+      "content": "메인 페이지 시안 완성! 나름 뿌듯하다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d30",
+      "userId": "user1234",
+      "date": "2025.07.26",
+      "title": "리뷰 받고 멘붕",
+      "content": "디자인 피드백 받았는데, 거의 다 수정해야 한다고... 다시 시작이다.",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d31",
+      "userId": "user1234",
+      "date": "2025.07.27",
+      "title": "그래도 다시 시작",
+      "content": "포기하지 않고 수정 시작. 의외로 마음에 드는 구성이 나왔다!",
+      "emotionResponse": "",
+      "emojiUrl": ""
+    },
+    {
+      "id": "d32",
+      "userId": "user1234",
+      "date": "2025.07.28",
+      "title": "막판 질주",
+      "content": "오늘 밤 샌다. 꼭 완성할 거야. 나 자신 화이팅!",
+      "emotionResponse": "",
+      "emojiUrl": ""
     }
   ]
 }
