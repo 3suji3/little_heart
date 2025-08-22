@@ -13,7 +13,7 @@ const EmotionPage = () => {
   const navigate = useNavigate();
   const location = useLocation(); 
   const [aiResponse, setAiResponse] = useState("잠시만 기다려 주세요... 😊"); 
-  const [emojiUrl, setEmojiUrl] = useState(""); // 생성된 이모지 URL 
+  const [emojiUrl, setEmojiUrl] = useState(""); 
 
   const handleBackWrite = () => {
     navigate("/write");
@@ -51,7 +51,7 @@ const EmotionPage = () => {
 
         // 이모지 이미지 생성 
         const imageResponse = await openai.images.generate({
-          prompt: `사용자가 정말 공감할만한 감성적이고 귀여운 이모지 느낌의 이미지로 나타내줘 : "${userDiary}". 반드시 이 글과 어울릴만한 것으로 그려야해!!`,
+          prompt: `사용자가 쓴 글과 관련이 있고 사용자가 정말 공감할만한 감성적이고 귀여운 이모지로 나타내줘 : "${userDiary}". 반드시 이 글과 어울릴만한 것으로 그려야해!!`,
           n: 1,
           size: "256x256", 
         });

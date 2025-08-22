@@ -7,7 +7,7 @@ const LookEmotion = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [aiResponse, setAiResponse] = useState("잠시만 기다려 주세요... 😊");
-  const [emojiUrl, setEmojiUrl] = useState(""); // 생성된 이미지 URL
+  const [emojiUrl, setEmojiUrl] = useState(""); 
   const [diaryData, setDiaryData] = useState(null);
 
   const handleBackEmotion = () => {
