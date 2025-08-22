@@ -1,4 +1,8 @@
 ## 🍀프로젝트 소개
 "사용자가 최근에 쓴 일기를 바탕으로 오늘의 명언을 보여주고, 사용자가 일기를 쓰면 그 일기를 기반으로 그에 맞는 공감을 해주는 웹사이트입니다."
 
+<a href="[https://www.notion.so/7dd1d10bfcc748c2bf9eaec0b53c29f9?source=copy_link](https://elfin-roof-54e.notion.site/d86e9d48e585429b84304d74fbf5edd6?source=copy_link)">
+    <img src="https://skillicons.dev/icons?i=notion&theme=light" alt="Notion" width="52" height="52" />
+</a>
+
 
