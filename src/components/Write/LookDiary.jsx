@@ -24,7 +24,6 @@ const LookDiary = () => {
     }
     return dateFromState;
   }, [location.state]);
-  // useMemo: 불필요한 재계산을 방지
 
   const navigate = useNavigate();
 
@@ -47,7 +46,7 @@ const LookDiary = () => {
         const user = JSON.parse(localStorage.getItem("user"));
         const diary = response.data.find((d) => {
           const diaryDate = d.date;
-         return diaryDate === formattedDate && d.userId === user.id;
+          return diaryDate === formattedDate && d.userId === user.id;
         });
         setDiaryData(diary || null);
       })
@@ -66,7 +65,10 @@ const LookDiary = () => {
 
   const handleEmotion = () => {
     if (!diaryData) return alert("일기 데이터가 없습니다.");
-    navigate("/write/diary/lookEmotion");
+    if (!diaryData.emotionResponse || !diaryData.emojiUrl) {
+      return alert("아직 공감 데이터가 생성되지 않았습니다.");
+    }
+    navigate(`/write/diary/lookEmotion/${diaryData.id}`);
   }
 
   const handleDelete = () => {

@@ -87,9 +87,16 @@ const WritePage = () => {
   const [diaries, setDiaries] = useState([])
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      setDiaries([]);
+      return;
+    }
+
     axios.get("http://localhost:9999/diary")
       .then((response) => {
-        setDiaries(response.data)
+        const userDiaries = response.data.filter(diary => diary.userId === user.id);
+        setDiaries(userDiaries);
       })
       .catch((error) => {
         console.error("에러 메시지: ", error)

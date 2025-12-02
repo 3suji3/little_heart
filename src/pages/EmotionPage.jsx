@@ -49,24 +49,29 @@ const EmotionPage = () => {
         const aiMessage = chatCompletion.choices[0].message.content;
         setAiResponse(aiMessage); // 메시지 상태 업데이트 
 
-        // 이모지 이미지 생성 
+        // 이모지 이미지 생성 (Base64 형식으로 직접 받기)
         const imageResponse = await openai.images.generate({
-          prompt: `사용자가 쓴 글과 관련이 있고 사용자가 정말 공감할만한 감성적이고 귀여운 이모지로 나타내줘 : "${userDiary}". 반드시 이 글과 어울릴만한 것으로 그려야해!!`,
+          prompt: `사용자가 쓴 글과 연관 있고 사용자가 정말 공감할만한 감성적이고 귀여운 이모지로 나타내줘 : "${userDiary}". 반드시 이 글과 어울리며 관련있는 것으로 그려야해!!`,
           n: 1,
-          size: "256x256", 
+          size: "256x256",
+          response_format: "b64_json", // Base64 형식으로 받기
         });
 
-        const generatedEmojiUrl = imageResponse.data[0].url
-        setEmojiUrl(generatedEmojiUrl)
-
+        // Base64 데이터 가져오기
+        const base64Image = `data:image/png;base64,${imageResponse.data[0].b64_json}`;
+        
+        // 화면에 표시
+        setEmojiUrl(base64Image);
+        
+        // DB에 영구 저장
         await fetch(`http://localhost:9999/diary/${diaryId}`, {
-          method: "PATCH", // 기존 일기에 감정 데이터 추가
+          method: "PATCH",
           headers: { "Content-Type": "application/json"},
           body: JSON.stringify({
             emotionResponse: aiMessage,
-            emojiUrl: generatedEmojiUrl,
+            emojiUrl: base64Image, // Base64로 변환된 이미지 저장
           })
-        })
+        });
       } catch (error) { 
         console.error("OpenAI API 호출 실패: ", error);
         setAiResponse("AI 응답을 가져오지 못했습니다. 다시 시도해 주세요.");

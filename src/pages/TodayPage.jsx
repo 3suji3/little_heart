@@ -25,6 +25,13 @@ const TodayPage = () => {
     //가장 최근의 다이어리 데이터, openai 호출
     const todayResponse = async () => {
       try {
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+        if (!storedUser) {
+          setQuote("로그인이 필요합니다.");
+          setAuthor("");
+          return;
+        }
+
         const diaries = await fetch("http://localhost:9999/diary")
           .then((response) => response.json());
 
@@ -34,8 +41,17 @@ const TodayPage = () => {
           return;
         }
 
+        // 현재 로그인한 사용자의 일기만 필터링
+        const userDiaries = diaries.filter(diary => diary.userId === storedUser.id);
+
+        if (userDiaries.length === 0) {
+          setQuote("최근 작성한 다이어리가 없습니다ㅠㅠ 다이어리를 작성하세요!");
+          setAuthor("");
+          return;
+        }
+
         //최근 날짜 기준 정렬
-        const recentDiary = diaries
+        const recentDiary = userDiaries
           .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
 
         if (!recentDiary) {

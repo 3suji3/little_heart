@@ -36,7 +36,7 @@ function App() {
         <Route path='write/todayDiary' element={<WriteDiary />} />
         <Route path='write/editDiary' element={<EditDiary/>} />
         <Route path='write/diary/emotion' element={<EmotionPage />} />
-        <Route path='write/diary/lookEmotion' element={<LookEmotion /> } />
+        <Route path='write/diary/lookEmotion/:id' element={<LookEmotion /> } />
       </Routes>
     </div>
     </ThemeProvider>
