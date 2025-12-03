@@ -5,7 +5,7 @@ const middlewares = jsonServer.defaults({
   noCors: false
 });
 
-// CORS 설정 - 미들웨어보다 먼저
+// CORS 설정
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
