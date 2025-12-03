@@ -2,7 +2,7 @@ import axios from "axios";
 
 const Server = axios.create({
     baseURL: process.env.NODE_ENV === 'production' 
-        ? "YOUR_RENDER_URL_HERE"  
+        ? "https://little-heart-sujis-projects-07c6a1ca.vercel.app/"  
         : "http://localhost:9999"    
 });
 
