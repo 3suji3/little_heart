@@ -1,0 +1,12 @@
+{
+  "name": "little-heart-api",
+  "version": "1.0.0",
+  "description": "JSON Server for Little Heart",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
